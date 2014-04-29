@@ -9,6 +9,7 @@
     %alert.slide-down{'ng-repeat' => 'alert in alerts', :type => 'alert.type', :close => 'closeAlert($index)'}
       {{alert.msg}}
     %br
+
     .row
       .col-lg-12
         %h3
@@ -74,11 +75,12 @@
             {{sample.yandex_wer}}
       %hr
 
-    .col-lg-12.text-center{'ng-if' => '!haveGraphs'}
-      .bs-callout-primary
-        %p
-          Please enter a reference so we can calculate the results
-      %hr
+    .row
+      .col-lg-12.text-center{'ng-if' => '!haveGraphs'}
+        .bs-callout-primary
+          %p
+            Please enter a reference so we can calculate the results
+        %hr
 
     .row
       .col-lg-12
