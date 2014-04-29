@@ -34,6 +34,6 @@ MIT License. Copyright 2014 alankehoe
 
 ## Authors & contributors
 
-* Alan Kehoe <alankehoe111@gmail.com>
-* Krystian Jankowski <krystian.jankowski2@mail.dcu.ie>
-* David O'Regan <adavidoregan91@gmail.com>
+* [Alan Kehoe](https://github.com/alankehoe), author
+* [Krystian Jankowski](https://github.com/jankowk2), contributor
+* [David O'Regan](https://github.com/Oregand), contributor
