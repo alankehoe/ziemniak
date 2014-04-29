@@ -41,7 +41,7 @@ navigate to `http://localhost:3000`
 
 #### License
 
-MIT License. Copyright 2014 alankehoe
+MIT License. Copyright 2014 [Alan Kehoe](https://github.com/alankehoe)
 
 #### Authors & contributors
 
