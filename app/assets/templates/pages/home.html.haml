@@ -46,6 +46,12 @@
                   %i.fa.fa-comment.fa-lg
                   {{sample.body}}
 
+    .row{'ng-if' => 'samples.length < 1'}
+      .col-lg-12.text-center
+        .bs-callout-primary
+          %p
+            It looks like you dont have any samples yet please create some to see the results
+
     .row
       .col-lg-12
         %h6
