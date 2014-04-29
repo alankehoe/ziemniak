@@ -20,13 +20,12 @@ gem install bundle
 bundle install
 ```
 
-#### Migrate Database
+#### Setup the Database
 ```bash
+# Migrate the database
 bundle exec rake db:migrate
-```
 
-#### Create OAuth Application
-```bash
+# Seed the database
 bundle exec rake db:seed_fu
 ```
 
