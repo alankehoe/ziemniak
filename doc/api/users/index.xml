@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users type="array">
+  <user>
+    <id type="integer">688</id>
+    <username>beahan</username>
+    <first-name>Fabiola</first-name>
+    <last-name>Smith</last-name>
+    <email>aaliyah_reinger@howe.name</email>
+    <gravatar>309348397-2</gravatar>
+    <sign-in-count type="integer">25</sign-in-count>
+    <current-sign-in-at type="dateTime">2014-04-28T12:10:20Z</current-sign-in-at>
+    <last-sign-in-at type="dateTime">2014-04-28T12:10:20Z</last-sign-in-at>
+    <current-sign-in-ip>7.30.179.22</current-sign-in-ip>
+    <last-sign-in-ip>179.33.242.222</last-sign-in-ip>
+    <created-at type="dateTime">2014-04-28T12:10:20Z</created-at>
+    <updated-at type="dateTime">2014-04-28T12:10:20Z</updated-at>
+  </user>
+  <user>
+    <id type="integer">276</id>
+    <username>smithamking</username>
+    <first-name>Jesse</first-name>
+    <last-name>Bins</last-name>
+    <email>davion@kreiger.name</email>
+    <gravatar>287685707-3</gravatar>
+    <sign-in-count type="integer">64</sign-in-count>
+    <current-sign-in-at type="dateTime">2014-04-28T12:10:20Z</current-sign-in-at>
+    <last-sign-in-at type="dateTime">2014-04-28T12:10:20Z</last-sign-in-at>
+    <current-sign-in-ip>6.188.22.130</current-sign-in-ip>
+    <last-sign-in-ip>104.27.147.232</last-sign-in-ip>
+    <created-at type="dateTime">2014-04-28T12:10:20Z</created-at>
+    <updated-at type="dateTime">2014-04-28T12:10:20Z</updated-at>
+  </user>
+</users>

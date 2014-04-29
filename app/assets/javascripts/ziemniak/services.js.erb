@@ -1,0 +1,53 @@
+'use strict';
+
+angular.module('ziemniak.services', [])
+
+        .factory('Sample', ['$resource', function ($resource) {
+            return $resource("/api/samples/:id", { id: "@id" },
+                    {
+                        'create': { method: 'POST' },
+                        'index': { method: 'GET', isArray: true },
+                        'show': { method: 'GET', isArray: false },
+                        'update': { method: 'PUT' },
+                        'destroy': { method: 'DELETE' }
+                    }
+            );
+        }])
+
+        .factory('Me', ['$resource', function ($resource) {
+            return $resource("/api/me", { id: "@id" },
+                    {
+                        'index': { method: 'GET', isArray: false },
+                        'update': { method: 'PUT' }
+                    }
+            );
+        }])
+
+        .factory('authInterceptor', ['$q', '$window', '$location',
+            function ($q, $window, $location) {
+                return {
+                    'request': function (config) {
+                        if ($window.sessionStorage.token) {
+                            config.headers.Authorization = 'Bearer ' + $window.sessionStorage.token;
+                        }
+                        return config || $q.when(config);
+                    },
+
+                    'requestError': function (rejection) {
+                        return $q.reject(rejection);
+                    },
+
+                    'response': function (response) {
+                        return response || $q.when(response);
+                    },
+
+                    'responseError': function (rejection) {
+                        if (rejection.status === 401 && $location.path() != '/users/login') {
+                            delete $window.sessionStorage.token;
+                            $location.path('/users/login')
+                        }
+                        return $q.reject(rejection);
+                    }
+                };
+            }]);
+

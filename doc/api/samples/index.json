@@ -1,0 +1,32 @@
+[
+  {
+    "id": 90,
+    "body": "ipsam sed non animi repudiandae",
+    "reference": "voluptas dolorum nostrum id ullam",
+    "yandex": "perferendis facere non provident sint",
+    "bing": "sit vero et assumenda accusantium",
+    "yandex_bleu": 0.27750807142676825,
+    "bing_bleu": 0.5103856487968235,
+    "yandex_wer": 0.8415066607974703,
+    "bing_wer": 0.34494801152106025,
+    "yandex_nist": 0.22735167130826794,
+    "bing_nist": 0.20252961199860753,
+    "created_at": "2014-04-28T12:10:20.208Z",
+    "updated_at": "2014-04-28T12:10:20.208Z"
+  },
+  {
+    "id": 852,
+    "body": "qui quam pariatur nihil commodi",
+    "reference": "reiciendis facilis minus ratione recusandae",
+    "yandex": "veniam iusto eligendi consectetur voluptas",
+    "bing": "dolores quibusdam inventore sint nemo",
+    "yandex_bleu": 0.373706721390056,
+    "bing_bleu": 0.4698005637181667,
+    "yandex_wer": 0.5140671935794466,
+    "bing_wer": 0.6339458348891908,
+    "yandex_nist": 1.7420095542511,
+    "bing_nist": 4.364081149024658,
+    "created_at": "2014-04-28T12:10:20.208Z",
+    "updated_at": "2014-04-28T12:10:20.208Z"
+  }
+]

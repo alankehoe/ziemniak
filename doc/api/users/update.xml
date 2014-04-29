@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+  <id type="integer">515</id>
+  <username>miller</username>
+  <first-name>Melyna</first-name>
+  <last-name>Bradtke</last-name>
+  <email>bertha@hettinger.com</email>
+  <gravatar>652459982-9</gravatar>
+  <sign-in-count type="integer">56</sign-in-count>
+  <current-sign-in-at type="dateTime">2014-04-28T12:10:20Z</current-sign-in-at>
+  <last-sign-in-at type="dateTime">2014-04-28T12:10:20Z</last-sign-in-at>
+  <current-sign-in-ip>124.176.110.145</current-sign-in-ip>
+  <last-sign-in-ip>77.147.36.191</last-sign-in-ip>
+  <created-at type="dateTime">2014-04-28T12:10:20Z</created-at>
+  <updated-at type="dateTime">2014-04-28T12:10:20Z</updated-at>
+</user>

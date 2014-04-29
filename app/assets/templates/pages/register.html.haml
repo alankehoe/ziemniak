@@ -1,0 +1,51 @@
+:css
+  html {
+    background: url(/san_fran.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  body {
+    padding-top: 20px;
+    font-size: 16px;
+    font-family: "Open Sans", serif;
+    background: transparent;
+  }
+
+  /* responsive */
+  @media (max-width: 767px) {
+    .login-wrapper .box {
+      width: 350px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .login-wrapper .box {
+      width: 90%;
+    }
+  }
+
+
+.login-wrapper
+  .box
+    .content-wrap
+      %form{'ng-submit' => 'register()'}
+        %h3.padding
+          Ziemniak
+        %alert{'ng-repeat' => 'alert in alerts', :type => 'alert.type', :close => 'closeAlert($index)'}
+          {{alert.msg}}
+        %input.form-control.padding{:name => 'username', :placeholder => 'Username', 'ng-model' => 'payload.user.username'}
+        %input.form-control.padding{:name => 'first_name', :placeholder => 'First Name', 'ng-model' => 'payload.user.first_name'}
+        %input.form-control.padding{:name => 'last_name', :placeholder => 'Last Name', 'ng-model' => 'payload.user.last_name'}
+        %input.form-control.padding{:name => 'email', :placeholder => 'Email', 'ng-model' => 'payload.user.email'}
+        %input.form-control.padding{:name => 'password', :type => 'password', :placeholder => 'Password', 'ng-model' => 'payload.user.password'}
+        %input.form-control.padding{:name => 'password_confirmation', :type => 'password', :placeholder => 'Password Confirmation', 'ng-model' => 'payload.user.password_confirmation'}
+        %button.btn.btn-primary.btn-sm.btn-block{:type => 'submit'}
+          Register
+    .no-account
+      %p
+        Already have an account?
+      %a{:href => '/#/users/login'}
+        Login

@@ -1,0 +1,12 @@
+//= require ../lib/angular/angular.js
+//= require ../lib/angular/angular-animate.js
+//= require ../lib/angular/angular-cookies.js
+//= require ../lib/angular/angular-loader.js
+//= require ../lib/angular/angular-resource.js
+//= require ../lib/angular/angular-route.js
+//= require ../lib/angular/angular-sanitize.js
+//= require ../lib/angular/angular-touch.js
+//= require ../lib/ui-bootstrap/ui-bootstrap.js
+//= require ../lib/d3/d3.v3.min.js
+//= require ../lib/n3-charts/pie-chart.min.js
+//= require_tree ./ziemniak

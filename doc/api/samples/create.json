@@ -1,0 +1,15 @@
+{
+  "id": 320,
+  "body": "eos et molestias saepe omnis",
+  "reference": "ipsa culpa dolorem rem facere",
+  "yandex": "voluptate mollitia similique velit aut",
+  "bing": "et a optio reiciendis aut",
+  "yandex_bleu": 0.23912665978443903,
+  "bing_bleu": 0.9981287512364468,
+  "yandex_wer": 0.848336117636704,
+  "bing_wer": 0.1934865515399744,
+  "yandex_nist": 0.9451265493861843,
+  "bing_nist": 4.584933109504095,
+  "created_at": "2014-04-28T12:10:20.176Z",
+  "updated_at": "2014-04-28T12:10:20.176Z"
+}

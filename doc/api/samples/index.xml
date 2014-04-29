@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<samples type="array">
+  <sample>
+    <id type="integer">90</id>
+    <body>ipsam sed non animi repudiandae</body>
+    <reference>voluptas dolorum nostrum id ullam</reference>
+    <yandex>perferendis facere non provident sint</yandex>
+    <bing>sit vero et assumenda accusantium</bing>
+    <yandex-bleu type="float">0.27750807142676825</yandex-bleu>
+    <bing-bleu type="float">0.5103856487968235</bing-bleu>
+    <yandex-wer type="float">0.8415066607974703</yandex-wer>
+    <bing-wer type="float">0.34494801152106025</bing-wer>
+    <yandex-nist type="float">0.22735167130826794</yandex-nist>
+    <bing-nist type="float">0.20252961199860753</bing-nist>
+    <created-at type="dateTime">2014-04-28T12:10:20Z</created-at>
+    <updated-at type="dateTime">2014-04-28T12:10:20Z</updated-at>
+  </sample>
+  <sample>
+    <id type="integer">852</id>
+    <body>qui quam pariatur nihil commodi</body>
+    <reference>reiciendis facilis minus ratione recusandae</reference>
+    <yandex>veniam iusto eligendi consectetur voluptas</yandex>
+    <bing>dolores quibusdam inventore sint nemo</bing>
+    <yandex-bleu type="float">0.373706721390056</yandex-bleu>
+    <bing-bleu type="float">0.4698005637181667</bing-bleu>
+    <yandex-wer type="float">0.5140671935794466</yandex-wer>
+    <bing-wer type="float">0.6339458348891908</bing-wer>
+    <yandex-nist type="float">1.7420095542511</yandex-nist>
+    <bing-nist type="float">4.364081149024658</bing-nist>
+    <created-at type="dateTime">2014-04-28T12:10:20Z</created-at>
+    <updated-at type="dateTime">2014-04-28T12:10:20Z</updated-at>
+  </sample>
+</samples>

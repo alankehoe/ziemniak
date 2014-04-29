@@ -1,0 +1,15 @@
+{
+  "id": 612,
+  "body": "vero quisquam blanditiis illo qui",
+  "reference": "porro ipsum laborum eveniet et",
+  "yandex": "laborum doloremque officia et molestias",
+  "bing": "debitis repudiandae illum tempore consequatur",
+  "yandex_bleu": 0.6991030165326899,
+  "bing_bleu": 0.7189010610809957,
+  "yandex_wer": 0.9170929792913803,
+  "bing_wer": 0.49094536611753203,
+  "yandex_nist": 0.017139670674937157,
+  "bing_nist": 3.8576885448695646,
+  "created_at": "2014-04-28T12:10:20.275Z",
+  "updated_at": "2014-04-28T12:10:20.275Z"
+}

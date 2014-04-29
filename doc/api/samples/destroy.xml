@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+  <id type="integer">201</id>
+  <body>nemo dolor ut adipisci vero</body>
+  <reference>sint necessitatibus qui nihil culpa</reference>
+  <yandex>sit amet non quaerat deserunt</yandex>
+  <bing>deserunt tempora eligendi quia saepe</bing>
+  <yandex-bleu type="float">0.960757936417257</yandex-bleu>
+  <bing-bleu type="float">0.7895068640545114</bing-bleu>
+  <yandex-wer type="float">0.8569607190318458</yandex-wer>
+  <bing-wer type="float">0.061129918158091545</bing-wer>
+  <yandex-nist type="float">4.9019858865029935</yandex-nist>
+  <bing-nist type="float">3.6738951602451198</bing-nist>
+  <created-at type="dateTime">2014-04-28T12:10:20Z</created-at>
+  <updated-at type="dateTime">2014-04-28T12:10:20Z</updated-at>
+</sample>

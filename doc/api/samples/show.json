@@ -1,0 +1,15 @@
+{
+  "id": 821,
+  "body": "velit incidunt amet quae omnis",
+  "reference": "voluptatibus ut exercitationem animi placeat",
+  "yandex": "velit aut nisi alias qui",
+  "bing": "voluptatem nesciunt vel et in",
+  "yandex_bleu": 0.8042838589859415,
+  "bing_bleu": 0.17781751957764136,
+  "yandex_wer": 0.5239099798621695,
+  "bing_wer": 0.12543333624735442,
+  "yandex_nist": 2.2723244040613584,
+  "bing_nist": 4.431452020750385,
+  "created_at": "2014-04-28T12:10:20.270Z",
+  "updated_at": "2014-04-28T12:10:20.270Z"
+}

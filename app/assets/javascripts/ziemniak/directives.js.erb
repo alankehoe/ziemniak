@@ -1,0 +1,10 @@
+'use strict';
+
+angular.module('ziemniak.directives', [])
+
+    .directive('navbar', function () {
+        return {
+            restrict: 'E',
+            templateUrl: '<%= asset_path('directives/navbar.html') %>'
+        }
+    });

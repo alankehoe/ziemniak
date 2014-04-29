@@ -1,0 +1,21 @@
+!!! 5
+%html{:lang => 'en', 'ng-app' => 'ziemniak'}
+%head
+  %meta{:charset => 'utf-8'}
+  %title
+    Ziemniak
+
+  %link{:rel => 'apple-touch-icon', :href => asset_path('Ziemniak.png')}
+  %link{:rel => 'apple-touch-icon', :href => asset_path('Ziemniak-57x57.png'), :sizes => '57x57'}
+  %link{:rel => 'apple-touch-icon', :href => asset_path('Ziemniak-72x72.png'), :sizes => '72x72'}
+  %link{:rel => 'apple-touch-icon', :href => asset_path('Ziemniak-114x114.png'), :sizes => '114x114'}
+
+  %meta{:name => 'viewport', :content => 'width=device-width'}
+  %meta{:name => 'apple-mobile-web-app-capable', :content => 'yes'}
+  %meta{:name => 'apple-mobile-web-app-status-bar-style', :content => 'black'}
+  = stylesheet_link_tag 'application', :media => 'all'
+  = javascript_include_tag 'application'
+  = csrf_meta_tag
+
+%body
+  %ng-view

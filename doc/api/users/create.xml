@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+  <id type="integer">433</id>
+  <username>mayertmetz</username>
+  <first-name>Shaniya</first-name>
+  <last-name>Kovacek</last-name>
+  <email>audreanne.streich@welchrunolfon.org</email>
+  <gravatar>917777637-2</gravatar>
+  <sign-in-count type="integer">33</sign-in-count>
+  <current-sign-in-at type="dateTime">2014-04-28T12:10:20Z</current-sign-in-at>
+  <last-sign-in-at type="dateTime">2014-04-28T12:10:20Z</last-sign-in-at>
+  <current-sign-in-ip>219.77.127.176</current-sign-in-ip>
+  <last-sign-in-ip>207.86.219.151</last-sign-in-ip>
+  <created-at type="dateTime">2014-04-28T12:10:20Z</created-at>
+  <updated-at type="dateTime">2014-04-28T12:10:20Z</updated-at>
+</user>

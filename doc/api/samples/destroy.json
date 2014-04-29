@@ -1,0 +1,15 @@
+{
+  "id": 201,
+  "body": "nemo dolor ut adipisci vero",
+  "reference": "sint necessitatibus qui nihil culpa",
+  "yandex": "sit amet non quaerat deserunt",
+  "bing": "deserunt tempora eligendi quia saepe",
+  "yandex_bleu": 0.960757936417257,
+  "bing_bleu": 0.7895068640545114,
+  "yandex_wer": 0.8569607190318458,
+  "bing_wer": 0.061129918158091545,
+  "yandex_nist": 4.9019858865029935,
+  "bing_nist": 3.6738951602451198,
+  "created_at": "2014-04-28T12:10:20.202Z",
+  "updated_at": "2014-04-28T12:10:20.202Z"
+}

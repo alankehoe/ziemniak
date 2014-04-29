@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+  <id type="integer">420</id>
+  <username>carter</username>
+  <first-name>Manuela</first-name>
+  <last-name>Glover</last-name>
+  <email>berta@kilback.info</email>
+  <gravatar>685166497-6</gravatar>
+  <sign-in-count type="integer">76</sign-in-count>
+  <current-sign-in-at type="dateTime">2014-04-28T12:10:20Z</current-sign-in-at>
+  <last-sign-in-at type="dateTime">2014-04-28T12:10:20Z</last-sign-in-at>
+  <current-sign-in-ip>119.99.13.79</current-sign-in-ip>
+  <last-sign-in-ip>204.91.85.225</last-sign-in-ip>
+  <created-at type="dateTime">2014-04-28T12:10:20Z</created-at>
+  <updated-at type="dateTime">2014-04-28T12:10:20Z</updated-at>
+</user>

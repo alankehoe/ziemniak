@@ -1,0 +1,218 @@
+'use strict';
+
+angular.module('ziemniak.controllers', [])
+
+        .controller('SampleCtrl', [ '$scope', 'Sample', '$routeParams', '$location', '$window', '$timeout', 'Me',
+            function ($scope, Sample, $routeParams, $location, $window, $timeout, Me) {
+                $scope.isCollapsed = true;
+                $scope.pending = false;
+                $scope.haveGraphs = false;
+                $scope.me = {};
+
+                $scope.alerts = [];
+                $scope.samples = [];
+                $scope.sample = {};
+                $scope.newSample = {};
+
+//                n3-charts setup
+                $scope.bleu_data = [];
+                $scope.nist_data = [];
+                $scope.wer_data = [];
+
+                $scope.bleu_options = {thickness: 15};
+                $scope.nist_options = {thickness: 15};
+                $scope.wer_options = {thickness: 15};
+
+//                Functions
+                $scope.closeAlert = function (index) {
+                    $scope.alerts.splice(index, 1);
+                };
+
+                $scope.removeAlerts = function () {
+                    $timeout(function () {
+                        $scope.alerts = [];
+                    }, 4000);
+                };
+
+                $scope.getMe = function () {
+                    function success() {
+                    }
+
+                    function failure() {
+                    }
+
+                    $scope.me = Me.index(success, failure);
+                };
+
+                $scope.indexSamples = function () {
+                    function success() {
+                        if (localStorage.getItem('alert') != null) {
+                            $scope.alerts.push({msg: localStorage.getItem('alert'), type: 'info'});
+                            localStorage.clear();
+                            $scope.removeAlerts();
+                        }
+                    }
+
+                    function failure() {
+                        $scope.alerts.push({msg: 'Failed to fetch samples', type: 'danger'});
+                    }
+
+                    $scope.samples = Sample.index(success, failure);
+                };
+
+                $scope.onReload = function () {
+                    $scope.indexSamples();
+                };
+
+                $scope.showSample = function () {
+                    $scope.sample = {};
+                    $scope.bleu_data = [];
+                    $scope.nist_data = [];
+                    $scope.wer_data = [];
+
+                    function success(response) {
+                        $scope.bleu_data.push(
+                                {label: "Bing", value: response.bing_bleu.toFixed(2), color: "#7ea0ff"},
+                                {label: "Yandex", value: response.yandex_bleu.toFixed(2), color: "#6f5499"});
+                        $scope.nist_data.push(
+                                {label: "Bing", value: response.bing_nist.toFixed(2), color: "#7ea0ff"},
+                                {label: "Yandex", value: response.yandex_nist.toFixed(2), color: "#6f5499"});
+                        $scope.wer_data.push(
+                                {label: "Bing", value: response.bing_wer.toFixed(2), color: "#7ea0ff"},
+                                {label: "Yandex", value: response.yandex_wer.toFixed(2), color: "#6f5499"});
+                        if (response.bing_bleu != null) {
+                            $scope.haveGraphs = true;
+                        }
+                    }
+
+                    function failure() {
+                        $scope.alerts.push({msg: 'Failed to fetch sample', type: 'danger'});
+                    }
+
+                    $scope.sample = Sample.show({ id: $routeParams.id }, success, failure);
+                };
+
+                $scope.createSample = function () {
+                    $scope.pending = true;
+
+                    function success(response) {
+                        $scope.pending = false;
+                        $scope.newSample = '/#/samples/' + response.id;
+                        $scope.alerts = [];
+                        $scope.alerts.push({msg: 'Sample successfully created click here to go to it straight away', type: 'success'});
+                        $scope.samples = Sample.index();
+                    }
+
+                    function failure(response) {
+                        $scope.pending = false;
+                        $scope.newSample = '';
+                        console.log(response);
+                        $scope.alerts.push({msg: response.data.messages[0], type: 'danger'});
+                    }
+
+                    Sample.create($scope.sample, success, failure);
+                };
+
+                $scope.updateSample = function () {
+                    $scope.pending = true;
+
+                    function success() {
+                        $scope.pending = false;
+                        $scope.alerts = [];
+                        $scope.showSample();
+                        $scope.alerts.push({msg: 'Sample successfully updated', type: 'success'});
+                        $scope.removeAlerts();
+                    }
+
+                    function failure(response) {
+                        $scope.pending = false;
+                        $scope.alerts.push({msg: response.data.messages[0], type: 'danger'});
+                    }
+
+                    Sample.update($scope.sample, success, failure);
+                };
+
+                $scope.destroySample = function () {
+                    function success() {
+                        localStorage.setItem('alert', 'Sample removed successfully');
+                        $location.path('/')
+                    }
+
+                    function failure(response) {
+                        $scope.alerts.push({msg: response.data.messages[0], type: 'danger'});
+                    }
+
+                    Sample.destroy({ id: $routeParams.id }, success, failure);
+                };
+
+                $scope.getMe();
+                if ($routeParams.id) {
+                    $scope.showSample();
+                } else {
+                    $scope.indexSamples();
+                }
+            }])
+
+        .controller('LoginCtrl', ['$scope', '$http', '$window', '$location',
+            function ($scope, $http, $window, $location) {
+                $scope.alerts = [];
+                delete $window.sessionStorage.token;
+
+                $scope.user = {
+                    grant_type: "password",
+                    client_id: '<%= Ziemniak::Oauth.get_uid %>',
+                    client_secret: '<%= Ziemniak::Oauth.get_secret %>',
+                    username: '',
+                    password: ''
+                };
+
+                $scope.login = function () {
+                    $http
+                            .post('/oauth/token', $scope.user)
+                            .success(function (data, status, headers, config) {
+                                $window.sessionStorage.token = data.access_token;
+                                $location.path('/')
+                            })
+                            .error(function (data, status, headers, config) {
+                                $scope.alerts.push({msg: 'Username or password incorrect', type: 'danger'});
+                                delete $window.sessionStorage.token;
+                            });
+                };
+
+                $scope.closeAlert = function (index) {
+                    $scope.alerts.splice(index, 1);
+                };
+            }])
+
+        .controller('RegisterCtrl', ['$scope', '$http', '$window', '$location',
+            function ($scope, $http, $window, $location) {
+                $scope.alerts = [];
+                $scope.payload = {
+                    user: {
+                        username: '',
+                        first_name: '',
+                        last_name: '',
+                        email: '',
+                        password: '',
+                        password_confirmation: ''
+                    }
+                };
+
+                $scope.register = function () {
+                    $http
+                            .post('/api/users', $scope.payload)
+                            .success(function (data, status, headers, config) {
+                                $location.path('/users/login')
+                            })
+                            .error(function (data, status, headers, config) {
+                                angular.forEach(data.messages, function (message) {
+                                    $scope.alerts.push({msg: message, type: 'danger'})
+                                });
+                                delete $window.sessionStorage.token;
+                            });
+                };
+
+                $scope.closeAlert = function (index) {
+                    $scope.alerts.splice(index, 1);
+                };
+            }]);

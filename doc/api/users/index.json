@@ -1,0 +1,32 @@
+[
+  {
+    "id": 688,
+    "username": "beahan",
+    "first_name": "Fabiola",
+    "last_name": "Smith",
+    "email": "aaliyah_reinger@howe.name",
+    "gravatar": "309348397-2",
+    "sign_in_count": 25,
+    "current_sign_in_at": "2014-04-28T12:10:20.324Z",
+    "last_sign_in_at": "2014-04-28T12:10:20.324Z",
+    "current_sign_in_ip": "7.30.179.22",
+    "last_sign_in_ip": "179.33.242.222",
+    "created_at": "2014-04-28T12:10:20.324Z",
+    "updated_at": "2014-04-28T12:10:20.324Z"
+  },
+  {
+    "id": 276,
+    "username": "smithamking",
+    "first_name": "Jesse",
+    "last_name": "Bins",
+    "email": "davion@kreiger.name",
+    "gravatar": "287685707-3",
+    "sign_in_count": 64,
+    "current_sign_in_at": "2014-04-28T12:10:20.326Z",
+    "last_sign_in_at": "2014-04-28T12:10:20.326Z",
+    "current_sign_in_ip": "6.188.22.130",
+    "last_sign_in_ip": "104.27.147.232",
+    "created_at": "2014-04-28T12:10:20.326Z",
+    "updated_at": "2014-04-28T12:10:20.326Z"
+  }
+]

@@ -1,0 +1,129 @@
+%navbar
+
+.container
+  .center.flip{'ng-if' => 'pending'}
+    .text-center
+      %i.fa.fa-spinner.fa-spin.fa-4x
+
+  .flip{'ng-if' => '!pending'}
+    %alert.slide-down{'ng-repeat' => 'alert in alerts', :type => 'alert.type', :close => 'closeAlert($index)'}
+      {{alert.msg}}
+    %br
+    .row
+      .col-lg-12
+        %h3
+          %i.fa.fa-comment.fa-lg
+          Sample:
+          %button.btn.btn-default.btn-xs.pull-right{:type => 'button', 'ng-click' => 'destroySample()'}
+            %i.fa.fa-ban.fa-lg
+              Delete Sample
+        %p
+          {{sample.body}}
+    %hr
+
+    -# Show only on laptops & desktops
+    .hidden-sm.hidden-xs
+      .row{'ng-if' => 'haveGraphs'}
+        .col-lg-12
+          .col-lg-4.col-md-4{:style => 'height:270px; text-align:center'}
+            %h3
+              Bleu Score
+            %pie-chart{:data => 'bleu_data', :options => 'bleu_options'}
+          -#%br
+          .col-lg-4.col-md-4{:style => 'height:270px; text-align:center'}
+            %h3
+              Nist Score
+            %pie-chart{:data => 'nist_data', :options => 'nist_options'}
+          -#%br
+          .col-lg-4.col-md-4{:style => 'height:270px; text-align:center'}
+            %h3
+              Wer Score
+            %pie-chart{:data => 'wer_data', :options => 'wer_options'}
+          -#%br
+      %br{'ng-if' => 'haveGraphs'}
+      %br{'ng-if' => 'haveGraphs'}
+      %hr{'ng-if' => 'haveGraphs'}
+
+    -# Show only on tablets and phones
+    .hidden-lg.hidden-md
+      .row
+        .col-sm-12.col-xs-12.text-center
+          .bs-callout-primary
+            %h3
+              Bleu Score
+            %strong Bing:
+            {{sample.bing_bleu}}
+            %br
+            %strong Yandex:
+            {{sample.yandex_bleu}}
+            %hr
+            %h3
+              Nist Score
+            %strong Bing:
+            {{sample.bing_nist}}
+            %br
+            %strong Yandex:
+            {{sample.yandex_nist}}
+            %hr
+            %h3
+              Wer Score
+            %strong Bing:
+            {{sample.bing_wer}}
+            %br
+            %strong Yandex:
+            {{sample.yandex_wer}}
+      %hr
+
+
+    .row
+      .col-lg-12
+        %h3
+          %i.fa.fa-align-justify.fa-lg
+          Reference:
+          %button.btn.btn-default.btn-xs.pull-right{:type => 'button', 'ng-click' => 'isCollapsed=!isCollapsed'}
+            %i.fa.fa-pencil-square-o.fa-lg
+              Edit Reference
+        %p{'ng-if' => 'isCollapsed'}
+          {{sample.reference}}
+
+    .row
+      .col-lg-12{:collapse => 'isCollapsed', :style => 'text-align:center'}
+        %form.form-horizontal{:name => 'form', 'ng-submit' => 'submit()'}
+          %span.input-group-addon
+            %strong
+              Reference:
+          %textarea.form-control{:rows => '8', 'ng-model' => 'sample.reference',  :required => ''}
+          %br
+          .col-lg-3
+          .col-lg-6
+            %button.btn.btn-xs.btn-success.btn-block{:type => 'submit', 'ng-click' => 'updateSample()'}
+              %i.fa.fa-floppy-o.fa-lg
+              Save
+          .col-lg-3
+    %hr
+
+    .row
+      .col-lg-6
+        %h3
+          %i.fa.fa-align-left.fa-lg
+          Bing Translate:
+        %p
+          {{sample.bing}}
+      .col-lg-6
+        %h3
+          %i.fa.fa-align-left.fa-lg
+          Yandex Translate:
+        %p
+          {{sample.yandex}}
+    %br
+    %br
+
+    .row
+      .col-lg-12
+        %h6
+          %strong
+            &copy Copyright Ziemniak
+            = Time.now.year
+          %small
+            Version
+            = Ziemniak::Version.get

@@ -1,0 +1,16 @@
+!!! 5
+%html{:lang => 'en'}
+%head
+  %meta{:charset => 'utf-8'}
+  %title
+    Ziemniak Documentation
+
+  = stylesheet_link_tag 'application', :media => 'all'
+  = Apipie.include_javascripts
+%body
+  %div{:style => 'height: 20px;'}
+  .container
+    = yield
+    %hr
+      %footer
+        = yield :apipie_footer
