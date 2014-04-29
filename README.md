@@ -10,13 +10,19 @@ Bing and Yandex translation services
 
 #### Get the source
 ```bash
+# Clone the source
 git clone git@github.com:alankehoe/ziemniak.git
+
+# Move into the directory
 cd ziemniak
 ```
 
 #### Install dependencies
 ```bash
+# Install bundle gem
 gem install bundle
+
+# Install dependencies
 bundle install
 ```
 
@@ -29,13 +35,14 @@ bundle exec rake db:migrate
 bundle exec rake db:seed_fu
 ```
 
-#### Run Rails server
+#### Try it locally
 ```bash
+# Run Rails server
 bundle exec rails s
-```
 
-#### Open browser
-navigate to `http://localhost:3000`
+# Check it out in the browser
+http://localhost:3000
+```
 
 
 #### License
