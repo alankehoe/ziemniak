@@ -3,47 +3,47 @@
 A machine translation service comparison tool. comparing
 Bing and Yandex translation services
 
-### How to install
+## How to install
 
-## Ensure has the following
+#### Ensure has the following
 * Ruby >= 1.9.3
 
-## Get the source
+#### Get the source
 ```bash
 git clone git@github.com:alankehoe/ziemniak.git
 cd ziemniak
 ```
 
-## Install dependencies
+#### Install dependencies
 ```bash
 gem install bundle
 bundle install
 ```
 
-## Migrate Database
+#### Migrate Database
 ```bash
 bundle exec rake db:migrate
 ```
 
-## Create OAuth Application
+#### Create OAuth Application
 ```bash
 bundle exec rake db:seed_fu
 ```
 
-## Run Rails server
+#### Run Rails server
 ```bash
 bundle exec rails s
 ```
 
-## Open browser
+#### Open browser
 navigate to `http://localhost:3000`
 
 
-## License
+#### License
 
 MIT License. Copyright 2014 alankehoe
 
-## Authors & contributors
+#### Authors & contributors
 
 * [Alan Kehoe](https://github.com/alankehoe), author
 * [Krystian Jankowski](https://github.com/jankowk2), contributor
