@@ -20,10 +20,10 @@ class Sample < ActiveRecord::Base
   end
 
   def get_yandex
-    self.yandex = Ziemniak::Yandex.get body
+    self.yandex = Ziemniak::Yandex.get body, :pl, :en
   end
 
   def get_bing
-    self.bing = Ziemniak::Bing.get body
+    self.bing = Ziemniak::Bing.get body, :pl, :en
   end
 end
