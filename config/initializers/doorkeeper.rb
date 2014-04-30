@@ -12,7 +12,7 @@ Doorkeeper.configure do
   end
 
   resource_owner_from_credentials do
-    u = User.login params[:username], params[:password]
+    u = User.login params[:username], params[:password], request
     u if u
   end
 

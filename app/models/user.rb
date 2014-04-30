@@ -13,9 +13,14 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name
   validates_presence_of :last_name
 
-  def self.login(username, password)
+  def self.login(username, password, request)
     user = User.find_by_username username
-    user if user && user.valid_password?(password)
+    if user && user.valid_password?(password)
+      user.update_tracked_fields! request
+      user
+    else
+      false
+    end
   end
 
   private
