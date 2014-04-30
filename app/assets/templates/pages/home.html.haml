@@ -10,6 +10,12 @@
       %a.alert-link{:href => '{{newSample}}'}
         {{alert.msg}}
 
+    .row{'ng-if' => 'samples.length == me.sample_limit'}
+      .col-lg-12.text-center
+        .bs-callout-danger
+          %strong
+            It looks like you have reached your limit, please remove some samples in order to create a new one.
+
     .row
       .col-lg-12
         %h3
