@@ -28,11 +28,11 @@ module Ziemniak
       end
 
       base.rescue_from NotPrivileged do
-        render status: 403, template: 'v1/errors/not_privileged'
+        render status: 403, template: 'api/errors/not_privileged'
       end
 
       base.rescue_from DuplicateEntry do
-        render status: 403, template: 'v1/errors/duplicate_entry'
+        render status: 403, template: 'api/errors/duplicate_entry'
       end
     end
   end

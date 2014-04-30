@@ -59,3 +59,5 @@ gem 'devise'
 gem 'doorkeeper'
 gem 'pony'
 
+gem 'cancan'
+

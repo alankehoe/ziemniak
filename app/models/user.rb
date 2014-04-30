@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :samples
+  has_many :samples, dependent: :destroy
 
   before_create :humanize_attributes
   after_create :send_registration_mail
