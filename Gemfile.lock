@@ -245,7 +245,7 @@ DEPENDENCIES
   pony
   rabl
   rails (= 4.0.2)
-  rspec-rails
+  rspec-rails (~> 3.0.0.beta)
   sass-rails
   sdoc
   seed-fu!

@@ -45,7 +45,7 @@ gem 'capistrano-rails'
 
 group :development, :test do
   gem 'debugger'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'simplecov'
   gem 'shoulda-matchers'
 end

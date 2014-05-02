@@ -10,7 +10,7 @@ describe User do
   end
 
   describe 'methods' do
-    let(:user) { FactoryGirl.create(:user, email: 'alankehoe111@gmail.com') }
+    let(:user) { FactoryGirl.create(:user, email: 'ziemniak@ziemnkia.ziemniak') }
 
     describe 'hash_gravatar' do
       it 'should create an MD5 hash of the users email' do
