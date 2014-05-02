@@ -8,4 +8,8 @@ describe Sample do
   it 'should validate presence of body' do
     should validate_presence_of(:body)
   end
+
+  it 'has a valid factory' do
+    expect(FactoryGirl.build(:sample)).to be_valid
+  end
 end

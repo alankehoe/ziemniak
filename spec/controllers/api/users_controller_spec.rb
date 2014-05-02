@@ -1,39 +1,24 @@
 require 'spec_helper'
 
 describe Api::UsersController do
+  render_views
 
-  describe "GET 'index'" do
-    it "returns http success" do
-      get 'index'
-      expect(response).to be_success
-    end
+  let(:user) { FactoryGirl.create :user }
+  let(:token) { double :accessible? => true, :resource_owner_id => user.id }
+
+  before :each do
+    controller.stub(:doorkeeper_token) { token }
+    request.accept = 'application/json'
   end
 
-  describe "GET 'show'" do
-    it "returns http success" do
-      get 'show'
-      expect(response).to be_success
-    end
-  end
+  describe 'POST create' do
+    describe 'When valid params are presented' do
+      it 'assigns a new User' do
+        post :create, :user => FactoryGirl.attributes_for(:user)
 
-  describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET 'update'" do
-    it "returns http success" do
-      get 'update'
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      get 'destroy'
-      expect(response).to be_success
+        expect(response.status).to eq(200)
+        expect(response).to render_template 'api/users/create'
+      end
     end
   end
 

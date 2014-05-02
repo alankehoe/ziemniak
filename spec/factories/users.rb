@@ -24,6 +24,8 @@ FactoryGirl.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
+    password 'someverylongpassword'
+    password_confirmation 'someverylongpassword'
     encrypted_password { Faker::Code.isbn }
     reset_password_token { Faker::Code.isbn }
     reset_password_sent_at { Faker::Code.isbn }

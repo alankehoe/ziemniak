@@ -53,9 +53,7 @@ module Api
     param_group :user
 
     def create
-      @user = User.new(user_params)
-      @user.gravatar = Digest::MD5.hexdigest(@user.email)
-      @user.save!
+      @user = User.create!(user_params)
       respond_with @user
     end
 
