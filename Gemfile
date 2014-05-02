@@ -6,7 +6,6 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'mysql2'
-gem 'seed-fu', github: 'mbleigh/seed-fu'
 
 # Use SCSS for stylesheets
 gem 'less-rails'
@@ -29,7 +28,6 @@ gem 'rabl'
 gem 'apipie-rails'
 gem 'nokogiri'
 
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -45,19 +43,28 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'capistrano'
 gem 'capistrano-rails'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'debugger'
+  gem 'rspec-rails'
+  gem 'simplecov'
+  gem 'shoulda-matchers'
+end
 
+# Connecting to external api and translation
 gem 'httparty'
 gem 'bing_translator', '~> 4.0.0'
 
+# Seeds and spec factories
 gem 'faker'
 gem 'factory_girl_rails'
-gem 'rspec-rails', '~> 3.0.0.beta'
+gem 'seed-fu', github: 'mbleigh/seed-fu'
 
+# User authorization & authentication
 gem 'devise'
 gem 'doorkeeper'
+gem 'cancancan'
+
+# Simple mailing solution
 gem 'pony'
 
-gem 'cancancan'
 
