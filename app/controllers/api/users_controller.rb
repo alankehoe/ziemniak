@@ -67,6 +67,7 @@ module Api
     param_group :user
 
     def update
+      raise NotPrivileged unless @user == current_user
       @user.update!(user_params)
       respond_with @user
     end
@@ -80,6 +81,7 @@ module Api
     param :id, :number, :required => true
 
     def destroy
+      raise NotPrivileged unless @user == current_user
       @user.destroy!
       respond_with @user
     end
