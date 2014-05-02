@@ -1,9 +1,10 @@
 class Sample < ActiveRecord::Base
+  belongs_to :user
+
   validates_presence_of :body
 
   before_create :get_yandex
   before_create :get_bing
-
   before_update :update_scores
 
   private

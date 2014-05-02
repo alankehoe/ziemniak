@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Sample do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should belong to user' do
+    should belong_to(:user)
+  end
+
+  it 'should validate presence of body' do
+    should validate_presence_of(:body)
+  end
 end
