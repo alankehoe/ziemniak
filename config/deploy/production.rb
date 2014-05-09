@@ -32,7 +32,7 @@ namespace :deploy do
     end
   end
 
-  after 'bundle:install' do
+  after 'assets:precompile' do
     on roles(:app), in: :sequence, wait: 5 do
       with rails_env: fetch(:rails_env) do
         execute "cd #{current_path}; RAILS_ENV=production bundle exec rake bower:install"
