@@ -8,5 +8,5 @@
 //= require ../bower_components/angular-touch/angular-touch.js
 //= require ../bower_components/angular-bootstrap/ui-bootstrap.js
 //= require ../bower_components/d3/d3.js
-//= require ../bower_components/pie-chart/dist/pie-chart.min.js
+//= require ../lib/pie-chart/pie-chart.js
 //= require_tree ./ziemniak
