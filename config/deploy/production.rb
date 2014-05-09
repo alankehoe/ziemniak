@@ -15,6 +15,7 @@ server 'zemniak@app.raven.com',
 
 namespace :deploy do
   after :finishing, 'deploy:cleanup', 'ziemniak:generate_docs'
+  before :deploy, 'deploy:bower'
 
   desc 'Restart application'
   task :restart do
@@ -29,6 +30,13 @@ namespace :deploy do
       with rails_env: fetch(:rails_env) do
         execute "cd #{current_path}; bundle exec rake db:seed_fu RAILS_ENV=production"
       end
+    end
+  end
+
+  desc 'get bower dependencies'
+  task :bower do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute 'bower install'
     end
   end
 
