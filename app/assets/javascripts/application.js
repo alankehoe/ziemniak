@@ -13,5 +13,5 @@
 // Other libraries
 //= require ../../../vendor/assets/javascripts/pie-chart/pie-chart.js
 
-// Angular App
+// My application
 //= require_tree ./ziemniak
