@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sass-rails'
 gem 'haml'
 gem 'jquery-rails'
+gem 'bower-rails', '~> 0.7.2'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
@@ -42,7 +43,6 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use Capistrano for deployment
 gem 'capistrano'
 gem 'capistrano-rails'
-gem 'capistrano-bower'
 
 group :development, :test do
   gem 'debugger'

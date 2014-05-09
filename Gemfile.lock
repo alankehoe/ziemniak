@@ -43,14 +43,13 @@ GEM
     bing_translator (4.0.0)
       json (~> 1.8.0)
       nokogiri (~> 1.6.0)
+    bower-rails (0.7.2)
     builder (3.1.4)
     cancancan (1.7.1)
     capistrano (3.0.1)
       i18n
       rake (>= 10.0.0)
       sshkit (>= 0.0.23)
-    capistrano-bower (1.0.0)
-      capistrano (~> 3.0)
     capistrano-bundler (1.1.1)
       capistrano (~> 3.0)
       sshkit (>= 1.2.0)
@@ -228,9 +227,9 @@ DEPENDENCIES
   apipie-rails
   bcrypt-ruby (~> 3.1.2)
   bing_translator (~> 4.0.0)
+  bower-rails (~> 0.7.2)
   cancancan
   capistrano
-  capistrano-bower
   capistrano-rails
   coffee-rails (~> 4.0.0)
   debugger
