@@ -32,7 +32,7 @@ namespace :deploy do
     end
   end
 
-  after 'assets:precompile' do
+  after 'assets:precompile', 'migrate' do
     on roles(:app), in: :sequence, wait: 5 do
       with rails_env: fetch(:rails_env) do
         execute "cd #{current_path}; bower install"
