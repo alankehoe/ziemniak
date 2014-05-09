@@ -33,9 +33,13 @@ namespace :deploy do
   end
 
   after 'bundle:install' do
-    run "cd #{release_path}; RAILS_ENV=production bundle exec rake bower:install"
-    # run "cd #{release_path}; RAILS_ENV=production bundle exec rake bower:resolve"
-    # run "cd #{release_path}; RAILS_ENV=production bundle exec rake bower:clean"
+    on roles(:app), in: :sequence, wait: 5 do
+      with rails_env: fetch(:rails_env) do
+        execute "cd #{current_path}; RAILS_ENV=production bundle exec rake bower:install"
+        # run "cd #{release_path}; RAILS_ENV=production bundle exec rake bower:resolve"
+        # run "cd #{release_path}; RAILS_ENV=production bundle exec rake bower:clean"
+      end
+    end
   end
 
   after :restart, :clear_cache do
