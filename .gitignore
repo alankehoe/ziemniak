@@ -17,3 +17,6 @@
 
 /.idea
 /coverage
+
+# ignore bower components
+/app/assets/bower_components

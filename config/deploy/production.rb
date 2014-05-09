@@ -14,6 +14,7 @@ server 'zemniak@app.raven.com',
        }
 
 namespace :deploy do
+  after :finishing, 'deploy:cleanup', 'ziemniak:generate_docs'
 
   desc 'Restart application'
   task :restart do
@@ -36,6 +37,4 @@ namespace :deploy do
 
     end
   end
-
-  after :finishing, 'deploy:cleanup', 'ziemniak:generate_docs'
 end
