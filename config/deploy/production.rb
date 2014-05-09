@@ -27,12 +27,12 @@ namespace :deploy do
   task :seed do
     on roles(:db), in: :sequence, wait: 5 do
       with rails_env: fetch(:rails_env) do
-        execute "cd #{current_path}; bundle exec rake db:seed_fu RAILS_ENV=production"
+        execute "cd #{current_path} bundle exec rake db:seed_fu RAILS_ENV=production"
       end
     end
   end
 
-  after 'assets:precompile', 'migrate' do
+  before 'assets:precompile', 'migrate' do
     on roles(:app), in: :sequence, wait: 5 do
       with rails_env: fetch(:rails_env) do
         execute "cd #{current_path}; bower install"
