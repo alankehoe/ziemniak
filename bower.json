@@ -19,7 +19,8 @@
     "angular-touch": "~1.2.16",
     "angular-bootstrap": "~0.11.0",
     "d3": "~3.1.10",
-    "bootstrap": "~3.1.1"
+    "bootstrap": "~3.1.1",
+    "trianglify": "~0.1.2"
   },
   "ignore": [
     "**/.*",

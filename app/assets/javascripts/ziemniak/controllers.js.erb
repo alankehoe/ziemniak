@@ -23,6 +23,8 @@ angular.module('ziemniak.controllers', [])
                 $scope.nist_options = {thickness: 15};
                 $scope.wer_options = {thickness: 15};
 
+                document.body.setAttribute('style', 'background-image: ');
+
 //                Functions
                 $scope.closeAlert = function (index) {
                     $scope.alerts.splice(index, 1);
@@ -155,6 +157,12 @@ angular.module('ziemniak.controllers', [])
 
         .controller('LoginCtrl', ['$scope', '$http', '$window', '$location',
             function ($scope, $http, $window, $location) {
+                var t = new Trianglify({
+                    cellsize: 150,
+                    noiseIntensity: 0});
+                var pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
+                document.body.setAttribute('style', 'background-image: ' + pattern.dataUrl);
+
                 $scope.alerts = [];
                 delete $window.sessionStorage.token;
 
@@ -186,6 +194,12 @@ angular.module('ziemniak.controllers', [])
 
         .controller('RegisterCtrl', ['$scope', '$http', '$window', '$location',
             function ($scope, $http, $window, $location) {
+                var t = new Trianglify({
+                    cellsize: 150,
+                    noiseIntensity: 0});
+                var pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
+                document.body.setAttribute('style', 'background-image: ' + pattern.dataUrl);
+
                 $scope.alerts = [];
                 $scope.payload = {
                     user: {
