@@ -158,6 +158,7 @@ angular.module('ziemniak.controllers', [])
         .controller('LoginCtrl', ['$scope', '$http', '$window', '$location',
             function ($scope, $http, $window, $location) {
                 var t = new Trianglify({
+                    x_gradient: Trianglify.colorbrewer.BuPu[5],
                     cellsize: 150,
                     noiseIntensity: 0});
                 var pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
@@ -195,6 +196,7 @@ angular.module('ziemniak.controllers', [])
         .controller('RegisterCtrl', ['$scope', '$http', '$window', '$location',
             function ($scope, $http, $window, $location) {
                 var t = new Trianglify({
+                    x_gradient: Trianglify.colorbrewer.BuPu[5],
                     cellsize: 150,
                     noiseIntensity: 0});
                 var pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
