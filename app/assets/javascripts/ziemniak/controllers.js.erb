@@ -157,13 +157,6 @@ angular.module('ziemniak.controllers', [])
 
         .controller('LoginCtrl', ['$scope', '$http', '$window', '$location',
             function ($scope, $http, $window, $location) {
-                var t = new Trianglify({
-                    x_gradient: Trianglify.colorbrewer.BuPu[5],
-                    cellsize: 150,
-                    noiseIntensity: 0});
-                var pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
-                document.body.setAttribute('style', 'background-image: ' + pattern.dataUrl);
-
                 $scope.alerts = [];
                 delete $window.sessionStorage.token;
 
@@ -195,28 +188,12 @@ angular.module('ziemniak.controllers', [])
 
         .controller('RegisterCtrl', ['$scope', '$http', '$window', '$location',
             function ($scope, $http, $window, $location) {
-                var t = new Trianglify({
-                    x_gradient: Trianglify.colorbrewer.BuPu[5],
-                    cellsize: 150,
-                    noiseIntensity: 0});
-                var pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
-                document.body.setAttribute('style', 'background-image: ' + pattern.dataUrl);
-
                 $scope.alerts = [];
-                $scope.payload = {
-                    user: {
-                        username: '',
-                        first_name: '',
-                        last_name: '',
-                        email: '',
-                        password: '',
-                        password_confirmation: ''
-                    }
-                };
+                $scope.user = {};
 
                 $scope.register = function () {
                     $http
-                            .post('/api/users', $scope.payload)
+                            .post('/api/users', {user: $scope.user})
                             .success(function (data, status, headers, config) {
                                 $location.path('/users/login')
                             })

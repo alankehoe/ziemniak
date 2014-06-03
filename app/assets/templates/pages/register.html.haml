@@ -1,21 +1,43 @@
-.login-wrapper
-  .box
-    .content-wrap
-      %form{'ng-submit' => 'register()'}
-        %h3.padding
-          Ziemniak
-        %alert{'ng-repeat' => 'alert in alerts', :type => 'alert.type', :close => 'closeAlert($index)'}
-          {{alert.msg}}
-        %input.form-control.padding{:name => 'username', :placeholder => 'Username', 'ng-model' => 'payload.user.username'}
-        %input.form-control.padding{:name => 'first_name', :placeholder => 'First Name', 'ng-model' => 'payload.user.first_name'}
-        %input.form-control.padding{:name => 'last_name', :placeholder => 'Last Name', 'ng-model' => 'payload.user.last_name'}
-        %input.form-control.padding{:name => 'email', :placeholder => 'Email', 'ng-model' => 'payload.user.email'}
-        %input.form-control.padding{:name => 'password', :type => 'password', :placeholder => 'Password', 'ng-model' => 'payload.user.password'}
-        %input.form-control.padding{:name => 'password_confirmation', :type => 'password', :placeholder => 'Password Confirmation', 'ng-model' => 'payload.user.password_confirmation'}
-        %button.btn.btn-primary.btn-sm.btn-block{:type => 'submit'}
-          Register
-    .no-account
-      %p
-        Already have an account?
-      %a{:href => '/#/users/login'}
-        Login
+.login-background
+  .container
+    .row
+      .col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1
+        %form.login-box{'ng-submit' => 'register()', :name => 'registerForm'}
+          %alert{'ng-repeat' => 'alert in alerts', :type => 'alert.type', :close => 'closeAlert($index)'}
+            {{alert.msg}}
+          .form-group
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-user
+              %input.form-control{:placeholder => 'username', 'ng-model' => 'user.username', :required => ''}
+          .form-group
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-lock
+              %input.form-control{:placeholder => 'first name', 'ng-model' => 'user.first_name', :required => ''}
+          .form-group
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-lock
+              %input.form-control{:placeholder => 'last name', 'ng-model' => 'user.last_name', :required => ''}
+          .form-group
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-lock
+              %input.form-control{:placeholder => 'email', 'ng-model' => 'user.email', :type => 'email', :required => ''}
+          .form-group
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-lock
+              %input.form-control{:type => 'password', :placeholder => 'password', 'ng-model' => 'user.password', :required => ''}
+          .form-group
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-lock
+              %input.form-control{:type => 'password', :placeholder => 'password confirmation', 'ng-model' => 'user.password_confirmation', :match => 'user.password' ,:required => ''}
+
+          %button.btn.btn-success.btn-block{:type => 'submit', 'ng-disabled' => 'registerForm.$invalid'}
+            Register
+          .links_right
+            %a{:href => '/#/users/login'}
+              Already have an account?
